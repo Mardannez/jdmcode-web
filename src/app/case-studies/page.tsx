@@ -3,7 +3,7 @@ import Header from '@/components/common/Header';
 import CaseStudyInteractive from './components/CaseStudyInteractive';
 
 export const metadata: Metadata = {
-  title: 'Casos de Estudio - DevPortfolio Pro',
+  title: 'Casos de Estudio - JDMCode',
   description: 'Explora análisis detallados de proyectos exitosos con resultados medibles, desafíos superados y lecciones aprendidas en desarrollo web y transformación digital.',
 };
 

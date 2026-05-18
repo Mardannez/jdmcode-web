@@ -10,7 +10,7 @@ import DownloadResumeSection from './components/DownloadResumeSection';
 import CTASection from './components/CTASection';
 
 export const metadata: Metadata = {
-  title: 'Sobre Mí - DevPortfolio Pro',
+  title: 'Sobre Mí - JDMCode',
   description: 'Conoce mi historia profesional, experiencia de 5+ años en desarrollo full-stack, metodología de trabajo y valores que guían cada proyecto. Desarrollador experto en JavaScript, React, Next.js, Node.js y C#/.NET.'
 };
 

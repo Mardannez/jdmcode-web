@@ -25,7 +25,7 @@ export default function HeroSection({ name, title, description, image, imageAlt 
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="flex items-center space-x-2">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-conversion/10">
-                  <span className="text-2xl font-bold text-conversion">5+</span>
+                  <span className="text-2xl font-bold text-conversion">7+</span>
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-text-primary">Años de</p>

@@ -3,7 +3,7 @@ import Header from '@/components/common/Header';
 import ContactInteractive from './components/ContactInteractive';
 
 export const metadata: Metadata = {
-  title: 'Contacto - DevPortfolio Pro',
+  title: 'Contacto - JDMCode',
   description: 'Ponte en contacto conmigo para discutir tu proyecto. Múltiples canales de comunicación disponibles: WhatsApp, email, teléfono y formulario de contacto. Respuesta garantizada en menos de 24 horas.',
 };
 
