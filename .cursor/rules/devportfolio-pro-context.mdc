@@ -1,14 +1,16 @@
 ---
-description: Contexto del portafolio personal DevPortfolio Pro (José Daniel Martínez)
+description: Contexto del portafolio personal JDMCode (José Daniel Martínez)
 alwaysApply: true
 ---
 
 # DevPortfolio Pro — Contexto del proyecto
 
 ## Propósito
-Portafolio web profesional full-stack para **José Daniel Martínez Trochez**. Posicionamiento: desarrollador con 5+ años, JavaScript, React, Next.js, Node.js, C#/.NET. Idioma principal del contenido: **español**. Marca: **DevPortfolio Pro**.
+
+Portafolio web profesional full-stack para **José Daniel Martínez Trochez**. Posicionamiento: desarrollador con 5+ años, JavaScript, React, Next.js, Node.js, C#/.NET. Idioma principal del contenido: **español**. Marca: **JDMCode**.
 
 ## Stack
+
 - **Next.js 15** (App Router) + **React 19** + **TypeScript**
 - **Tailwind CSS 3.4** con tokens CSS en `src/styles/tailwind.css` (patrón tipo shadcn: `primary`, `conversion`, `brand-purple`, `text-primary`, etc.)
 - Fuentes: **Outfit** (headlines), **Inter** (body), **JetBrains Mono** (código)
@@ -19,6 +21,7 @@ Portafolio web profesional full-stack para **José Daniel Martínez Trochez**. P
 - Deploy previsto: **Netlify** (`@netlify/plugin-nextjs`)
 
 ## Estructura de carpetas
+
 ```
 src/
 ├── app/                    # Una carpeta = una ruta
@@ -39,48 +42,59 @@ public/images/              # LogoJDM.png, Yo_PortafolioWeb.png, etc.
 ```
 
 ## Patrón arquitectónico por página
+
 1. **`page.tsx`** (Server Component): `export const metadata`, importa `Header`, compone `<main className="pt-16">`.
 2. **`*Interactive.tsx`** (`'use client'`): orquesta secciones, estado, handlers (WhatsApp, modales, filtros). Patrón `isHydrated` para evitar hydration mismatch en acciones de ventana.
 3. **Componentes de sección** en `app/{ruta}/components/`.
 4. **Datos**: mayormente **mock hardcodeado** dentro de `page.tsx` (about) o del componente Interactive (portfolio, skills, etc.). No hay API ni CMS aún.
 
 ## Rutas y redirect
+
 - `/` → redirect permanente temporal a `/homepage` (`next.config.mjs`)
 - Nav en `Header.tsx`: Home, About, Skills, Portfolio, Services | More: Case Studies, Contact
 
 ## Páginas y componentes
 
 ### `/homepage`
+
 - `HomepageInteractive`: HeroSection, FeaturedProjects, ServicesOverview, CTASection, Footer, WhatsAppButton
 - Comentados: TrustIndicators, TestimonialHighlights
 - WhatsApp homepage: `50489783555`
 
 ### `/about`
+
 - Datos en `page.tsx` (hero, timeline, metodología, valores, certificaciones) pasados como props
 - Secciones: HeroSection, StorySection, TimelineSection, MethodologySection, ValuesSection, CertificationsSection, DownloadResumeSection, CTASection
 
 ### `/skills`
+
 - `SkillsInteractive`: SkillCategory, CertificationCard, CodeSnippet, GitHubActivity, LearningTimeline + filtros
 
 ### `/portfolio`
+
 - `PortfolioInteractive`: FilterBar, ProjectCard, ProjectModal; filtros por categoría/tecnología/industria/búsqueda; vista grid/list
 
 ### `/services`
+
 - Hero + stats en `page.tsx`; `ServicesInteractive`: ServiceCard, ProcessTimeline, TestimonialCarousel, ComparisonTable, FAQSection, ROICalculator; footer propio en page
 
 ### `/case-studies`
+
 - `CaseStudyInteractive`: CaseStudyHero, Challenge, Solution, TechStack, Results, Testimonial, Timeline, LessonsLearned, RelatedProjects, CTA
 
 ### `/contact`
+
 - `ContactInteractive`: ContactHero, ContactMethods, ProjectInquiryForm, AvailabilityCalendar, ResponseTimeInfo, LocationMap, FAQSection, SocialLinks; skeleton hasta hidratación
 
 ## Convenciones de código
+
 - Alias `@/*` → `./src/*`
 - Client components solo cuando hay estado/eventos/DOM
 - Clases Tailwind semánticas del tema (`bg-background`, `text-text-primary`, `bg-conversion`, `font-headline`)
 - `Header` fijo `z-50`; contenido con `pt-16`
 
 ## Pendientes / inconsistencias conocidas
+
 - Números WhatsApp distintos: Header `1234567890`, homepage `50489783555`, contact `34612345678` — unificar al real
 - `layout.tsx` metadata aún boilerplate en inglés
 - `typescript.ignoreBuildErrors` y `eslint.ignoreDuringBuilds` en `true`
@@ -89,4 +103,5 @@ public/images/              # LogoJDM.png, Yo_PortafolioWeb.png, etc.
 - About usa patrón distinto (datos en page vs todo en Interactive)
 
 ## Comandos útiles
+
 `npm run dev` | `npm run build` | `npm run lint` | `npm run format`
