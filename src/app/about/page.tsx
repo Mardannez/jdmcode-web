@@ -74,7 +74,7 @@ export default function AboutPage() {
     "Módulo interno de Ventas Empresariales",
     "Facturación Periódica de Planes PorSald, personales y empresariales",
     "Automatizacion de tareas de forma periodoca como ser: Renovaciones, Cobros, Cancelaciones, Envío de Estados de Cuenta y Envío de facturas a clientes.",
-     "Desarollo de mejoras a sistemas existentes como ser: Ventas, Facturacion, Cobros, Citas, Atenciones Medicas, Reportes e Integraciones con sistema contable",
+    "Desarollo de mejoras a sistemas existentes como ser: Ventas, Facturacion, Cobros, Citas, Atenciones Medicas, Reportes e Integraciones con sistema contable",
   
   ],
 

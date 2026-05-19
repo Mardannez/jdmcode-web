@@ -72,7 +72,7 @@ export default function SkillsInteractive() {
     },
     {
       name: 'Next.js',
-      proficiency: 90,
+      proficiency: 85,
       yearsOfExperience: 2,
       projects: ['Demo E-Commerce', 'Proyecto requisitos legales CSI', 'Portafolio web'],
       icon: '▲',
@@ -102,7 +102,7 @@ export default function SkillsInteractive() {
     skills: [
     {
       name: 'Node.js',
-      proficiency: 88,
+      proficiency: 90,
       yearsOfExperience: 2,
       projects: ['REST APIs', 'Microservices', 'Real-time Apps'],
       icon: '🟢',
@@ -119,7 +119,7 @@ export default function SkillsInteractive() {
     {
       name: 'Express.js',
       proficiency: 90,
-      yearsOfExperience: 5,
+      yearsOfExperience: 2,
       projects: ['API Gateways', 'Authentication Systems', 'Middleware'],
       icon: '🚂',
       description: 'Construcción de servidores escalables con middleware personalizado y manejo de errores.'
