@@ -313,6 +313,8 @@ export interface PortfolioProject {
   gallery: Array<{ url: string; alt: string }>;
 }
 
+const PORTFOLIO_PROJECT_ORDER = [1, 7, 6, 8, 4, 5, 2, 3];
+
 export function buildPortfolioProjects(): PortfolioProject[] {
   return featuredProjects.map((project) => {
     const details = PORTFOLIO_DETAILS[project.id];
@@ -337,5 +339,9 @@ export function buildPortfolioProjects(): PortfolioProject[] {
       metrics: details.metrics,
       gallery: [{ url: project.image, alt: project.alt }],
     };
-  });
+  }).sort(
+    (a, b) =>
+      PORTFOLIO_PROJECT_ORDER.indexOf(a.id) -
+      PORTFOLIO_PROJECT_ORDER.indexOf(b.id),
+  );
 }
