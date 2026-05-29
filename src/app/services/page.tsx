@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 
 export const metadata: Metadata = {
-  title: 'Servicios de Desarrollo Web - DevPortfolio Pro',
+  title: 'Servicios de Desarrollo Web - JDMCode',
   description: 'Descubre nuestros paquetes de desarrollo web: desde soluciones básicas para startups hasta arquitecturas empresariales escalables. Precios transparentes, procesos claros y resultados garantizados.',
 };
 

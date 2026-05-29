@@ -3,27 +3,9 @@
 import { useState } from 'react';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
+import type { PortfolioProject } from '@/data/projects';
 
-interface Technology {
-  name: string;
-  icon: string;
-}
-
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  industry: string;
-  description: string;
-  image: string;
-  alt: string;
-  technologies: Technology[];
-  timeline: string;
-  teamSize: string;
-  liveUrl?: string;
-  githubUrl?: string;
-  featured: boolean;
-}
+type Project = PortfolioProject;
 
 interface ProjectCardProps {
   project: Project;

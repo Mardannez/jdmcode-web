@@ -81,6 +81,41 @@ export const featuredProjects: FeaturedProject[] = [
     liveUrl: 'https://csi-legal-front.vercel.app/login',
     featured: true,
   },
+  {
+    id: 7,
+    title: 'Maradiaga Legal',
+    description:
+      'Pagina web oficial para servicios legales con contacto directo por WhatsApp',
+    category: 'Servicios Legales',
+    technologies: ['HTML', 'Tailwindcss', 'Javascript', 'ReactJS','Integracion con Whatsapp'],
+    image: '/images/Maradiaga_Legal.png',
+    alt: 'Sitio web Maradiaga Legal para servicios legales en Honduras',
+    liveUrl: 'https://maradiagalegal.com/',
+    featured: true,
+  },
+  {
+    id: 8,
+    title: 'CSI Legal API',
+    description:
+      'Documentacion oficial de endpoints para CSI Legal con Swagger/OpenAPI 3.0',
+    category: 'API Legal',
+    technologies: [
+      'Express para servidor HTTP y rutas',
+      'Supabase/PostgreSQL como capa de datos',
+      'JWT con jsonwebtoken para autenticacion',
+      'bcrypt/bcryptjs para contrasenas',
+      'Helmet para headers de seguridad',
+      'CORS configurado por variable de entorno',
+      'express-rate-limit para limitar /api/auth',
+      'Multer en memoria para carga/descarga de archivos',
+      'Swagger/OpenAPI 3.0 con swagger-jsdoc y swagger-ui-express',
+      'Vercel como despliegue serverless',
+    ],
+    image: '/images/Api-CSI-Legal.png',
+    alt: 'Documentacion Swagger de la API CSI Legal',
+    liveUrl: 'https://csi-legal-api.vercel.app/api-docs/',
+    featured: true,
+  },
 ];
 
 const TECH_ICONS: Record<string, string> = {
@@ -101,6 +136,18 @@ const TECH_ICONS: Record<string, string> = {
   'ASP.NET': 'WindowIcon',
   'C# MVC': 'CpuChipIcon',
   Supabase: 'CircleStackIcon',
+  'Integracion con Whatsapp': 'ChatBubbleLeftRightIcon',
+  'Express para servidor HTTP y rutas': 'ServerIcon',
+  'Supabase/PostgreSQL como capa de datos': 'CircleStackIcon',
+  'JWT con jsonwebtoken para autenticacion': 'ShieldCheckIcon',
+  'bcrypt/bcryptjs para contrasenas': 'LockClosedIcon',
+  'Helmet para headers de seguridad': 'ShieldCheckIcon',
+  'CORS configurado por variable de entorno': 'AdjustmentsHorizontalIcon',
+  'express-rate-limit para limitar /api/auth': 'ClockIcon',
+  'Multer en memoria para carga/descarga de archivos': 'FolderArrowDownIcon',
+  'Swagger/OpenAPI 3.0 con swagger-jsdoc y swagger-ui-express':
+    'DocumentTextIcon',
+  'Vercel como despliegue serverless': 'CloudIcon',
 };
 
 export function mapProjectTechnologies(techs: string[]) {
@@ -211,6 +258,36 @@ const PORTFOLIO_DETAILS: Record<
       { label: 'Sector', value: 'Legal', icon: 'DocumentTextIcon' },
     ],
   },
+  7: {
+    portfolioCategory: 'Desarrollo Web',
+    industrySlug: 'legal',
+    challenge:
+      'Crear presencia digital profesional para una marca personal legal con un canal de contacto inmediato.',
+    solution:
+      'Sitio web con HTML y Tailwind CSS, estructurado para presentar servicios y conectar prospectos por WhatsApp.',
+    results:
+      'Pagina oficial en produccion para captar consultas legales y reforzar confianza profesional.',
+    metrics: [
+      { label: 'Sitio', value: 'Corporativo', icon: 'BuildingOfficeIcon' },
+      { label: 'UI', value: 'Tailwind', icon: 'PaintBrushIcon' },
+      { label: 'Contacto', value: 'WhatsApp', icon: 'ChatBubbleLeftRightIcon' },
+    ],
+  },
+  8: {
+    portfolioCategory: 'API / Backend',
+    industrySlug: 'legal',
+    challenge:
+      'Exponer y documentar los endpoints del sistema CSI Legal con seguridad, control de acceso y manejo de archivos.',
+    solution:
+      'Tecnologias principales: Express para servidor HTTP y rutas. Supabase/PostgreSQL como capa de datos. JWT con jsonwebtoken para autenticacion. bcrypt/bcryptjs para contrasenas. Helmet para headers de seguridad. CORS configurado por variable de entorno. express-rate-limit para limitar /api/auth. Multer en memoria para carga/descarga de archivos. Swagger/OpenAPI 3.0 con swagger-jsdoc y swagger-ui-express. Vercel como despliegue serverless.',
+    results:
+      'API documentada en Swagger, desplegada en Vercel y lista para integrarse con el frontend de CSI Legal.',
+    metrics: [
+      { label: 'Servidor', value: 'Express', icon: 'ServerIcon' },
+      { label: 'Datos', value: 'Supabase/PostgreSQL', icon: 'CircleStackIcon' },
+      { label: 'Docs', value: 'Swagger/OpenAPI', icon: 'DocumentTextIcon' },
+    ],
+  },
 };
 
 export interface PortfolioProject {
@@ -226,6 +303,7 @@ export interface PortfolioProject {
   timeline: string;
   teamSize: string;
   liveUrl: string;
+  githubUrl?: string;
   featured: boolean;
   fullDescription: string;
   challenge: string;
