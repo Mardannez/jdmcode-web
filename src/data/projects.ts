@@ -11,7 +11,7 @@ export interface FeaturedProject {
   featured: boolean;
 }
 
-export const featuredProjects: FeaturedProject[] = [
+const projects: FeaturedProject[] = [
   {
     id: 10,
     title: 'Total Services · Plataforma empresarial de gestión operativa',
@@ -58,7 +58,7 @@ export const featuredProjects: FeaturedProject[] = [
     image: '/images/SportGear-Honduras.png',
     alt: 'Demo de tienda online SportGear Honduras',
     liveUrl: 'https://sportgear-honduras-front.vercel.app/',
-    featured: true,
+    featured: false,
   },
   {
     id: 3,
@@ -70,7 +70,7 @@ export const featuredProjects: FeaturedProject[] = [
     image: '/images/Escencia-Creativa.png',
     alt: 'Sitio web demo para agencia de marketing digital',
     liveUrl: 'https://escencia-creativa-choluteca.vercel.app/homepage',
-    featured: true,
+    featured: false,
   },
   {
     id: 4,
@@ -375,9 +375,14 @@ export interface PortfolioProject {
 }
 
 const PORTFOLIO_PROJECT_ORDER = [10, 9, 1, 7, 6, 8, 4, 5, 2, 3];
+const orderedProjects = [...projects].sort(
+  (a, b) => PORTFOLIO_PROJECT_ORDER.indexOf(a.id) - PORTFOLIO_PROJECT_ORDER.indexOf(b.id),
+);
+
+export const featuredProjects = orderedProjects.filter((project) => project.featured);
 
 export function buildPortfolioProjects(): PortfolioProject[] {
-  return featuredProjects.map((project) => {
+  return orderedProjects.map((project) => {
     const details = PORTFOLIO_DETAILS[project.id];
     return {
       id: project.id,
@@ -401,9 +406,5 @@ export function buildPortfolioProjects(): PortfolioProject[] {
       metrics: details.metrics,
       gallery: [{ url: project.image, alt: project.alt }],
     };
-  }).sort(
-    (a, b) =>
-      PORTFOLIO_PROJECT_ORDER.indexOf(a.id) -
-      PORTFOLIO_PROJECT_ORDER.indexOf(b.id),
-  );
+  });
 }
