@@ -92,7 +92,7 @@ export default function FeaturedProjects() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 text-primary font-semibold hover:text-primary/80 transition-colors">
 
-                  <span>Ir a proyecto oficial</span>
+                  <span>{currentProject.linkLabel ?? 'Ir a proyecto oficial'}</span>
                   <Icon name="ArrowRightIcon" size={16} />
                 </a>
 

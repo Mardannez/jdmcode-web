@@ -39,7 +39,7 @@ const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   <Icon name="GlobeAltIcon" size={16} />
-                  <span>Demo</span>
+                  <span>{project.linkLabel ?? 'Demo'}</span>
                 </a>
               )}
               {project.githubUrl && (

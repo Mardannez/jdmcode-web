@@ -35,6 +35,7 @@ interface Project {
   timeline: string;
   teamSize: string;
   liveUrl?: string;
+  linkLabel?: string;
   githubUrl?: string;
   featured: boolean;
   fullDescription: string;
@@ -103,7 +104,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   className="flex items-center space-x-2 rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:scale-105"
                 >
                   <Icon name="GlobeAltIcon" size={18} />
-                  <span>Ver Demo</span>
+                  <span>{project.linkLabel ?? 'Ver Demo'}</span>
                 </a>
               )}
               {project.githubUrl && (

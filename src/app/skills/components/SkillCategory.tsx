@@ -1,8 +1,8 @@
-interface Skill {
+export interface Skill {
   name: string;
-  proficiency: number;
-  yearsOfExperience: number;
-  projects: string[];
+  proficiency?: number;
+  yearsOfExperience?: number;
+  projects?: string[];
   icon: string;
   description: string;
 }
@@ -31,19 +31,19 @@ export default function SkillCategory({ title, skills, categoryIcon }: SkillCate
                 <h3 className="font-semibold text-text-primary">{skill.name}</h3>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-sm text-text-secondary">{skill.yearsOfExperience}+ años</span>
-                <span className="text-sm font-semibold text-primary">{skill.proficiency}%</span>
+                {skill.yearsOfExperience !== undefined && <span className="text-sm text-text-secondary">{skill.yearsOfExperience}+ años</span>}
+                {skill.proficiency !== undefined && <span className="text-sm font-semibold text-primary">{skill.proficiency}%</span>}
               </div>
             </div>
-            <div className="relative h-2 bg-muted rounded-full overflow-hidden mb-2">
+            {skill.proficiency !== undefined && <div className="relative h-2 bg-muted rounded-full overflow-hidden mb-2">
               <div
                 className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-brand-purple transition-all duration-500 group-hover:scale-x-105"
                 style={{ width: `${skill.proficiency}%` }}
               />
-            </div>
+            </div>}
             <p className="text-sm text-text-secondary mb-2">{skill.description}</p>
             <div className="flex flex-wrap gap-2">
-              {skill.projects.map((project, idx) => (
+              {skill.projects?.map((project, idx) => (
                 <span
                   key={idx}
                   className="text-xs bg-muted text-text-secondary px-2 py-1 rounded-md"

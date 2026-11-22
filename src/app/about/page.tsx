@@ -64,7 +64,7 @@ export default function AboutPage() {
 
   const timelineData: TimelineItem[] = [
   {
-    year: "2019-2026",
+    year: "2019-Actual",
     title: "Jefe de Desarrollo de Software",
     company: "PorSalud-Medicard",
     description: "Supervisor de proyectos internos, analisando requerimientos de usaurio, programar tiempos de entrega, y con supervision y despliegue a produccion",
@@ -307,6 +307,51 @@ export default function AboutPage() {
       <main className="pt-16">
         <HeroSection {...heroData} />
         <StorySection story={storyParagraphs} />
+        <section aria-labelledby="freelance-heading" className="bg-background py-16 lg:py-24">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <h2 id="freelance-heading" className="mb-8 font-headline text-3xl font-bold text-text-primary sm:text-4xl">
+              Experiencia freelance
+            </h2>
+            <h3 className="font-headline text-xl font-bold text-text-primary">Desarrollador Full Stack freelance</h3>
+            <p className="mt-1 text-sm font-semibold text-secondary"><time dateTime="2025-10">Octubre de 2025</time> – actualidad</p>
+            <h4 className="mt-6 font-semibold text-text-primary">Proyectos entregados y en producción</h4>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-text-secondary">
+              <li><strong>AmazingNails</strong> · Sitio del salón con agendamiento de citas en línea.</li>
+              <li><strong>Maradiaga Legal</strong> · Sitio de servicios legales con contacto directo por WhatsApp.</li>
+              <li><strong>CSI-Legal</strong> · Aplicación para dar seguimiento al cumplimiento legal de las empresas.</li>
+              <li><strong>CSI Legal API</strong> · API que gestiona evaluaciones y evidencias de cumplimiento, documentada con Swagger.</li>
+              <li><strong>ESI Honduras</strong> · Catálogo de equipos de seguridad industrial con cotización por WhatsApp.</li>
+            </ul>
+            <p className="mt-4 text-text-secondary">Actualmente desarrollo dos sitios web más.</p>
+            <h3 className="mt-8 font-headline text-xl font-bold text-text-primary">Colaboración en aplicaciones empresariales</h3>
+            <p className="mt-1 text-sm font-semibold text-secondary"><time dateTime="2026-06">Junio de 2026</time> – actualidad</p>
+            <p className="mt-4 leading-relaxed text-text-secondary">
+              Colaboro con un cliente externo en el desarrollo de aplicaciones empresariales. Mi trabajo abarca la interfaz, la API y la integración de servicios que facilitan la planificación del trabajo y la generación de reportes.
+            </p>
+            <div className="mt-6 space-y-6 border-l-2 border-primary pl-5">
+              <div>
+                <h4 className="font-semibold text-text-primary">
+                  <a href="https://total-services.net/" className="text-primary underline underline-offset-4">Total Services</a> · En curso
+                </h4>
+                <p className="mt-1 leading-relaxed text-text-secondary">
+                  Desarrollo y mantengo funcionalidades para gestionar empleados, proyectos, horas y tarifas con React, TypeScript y una API en Python con Django REST Framework.
+                </p>
+                <p className="mt-4 leading-relaxed text-text-primary">
+                  <strong>Estoy finalizando una automatización para enviar reportes con mensajes e imagenes por WhatsApp mediante n8n, la plataforma de Meta y Vertex AI de Google Cloud para realizar analisis y finalizar con reportes en pdf.</strong>
+                </p>
+              
+              </div>
+              <div>
+                <h4 className="font-semibold text-text-primary">
+                  <a href="https://bodeclaro.com/dashboard" className="text-primary underline underline-offset-4">Bodeclaro</a> · Gestión documental para firmas profesionales
+                </h4>
+                <p className="mt-1 leading-relaxed text-text-secondary">
+                  Bodeclaro gestiona una cartera de clientes y reúne la información y los documentos de cada uno en su expediente. Mi responsabilidad en este proyecto es mejorar la experiencia del equipo al organizar los expedientes, administrar sus documentos y cargar archivos desarrollando componentes en el frontend como en el backend.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
         <TimelineSection timeline={timelineData} />
         <MethodologySection methodology={methodologyData} />
         <ValuesSection values={valuesData} />

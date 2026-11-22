@@ -7,10 +7,35 @@ export interface FeaturedProject {
   image: string;
   alt: string;
   liveUrl: string;
+  linkLabel?: string;
   featured: boolean;
 }
 
 export const featuredProjects: FeaturedProject[] = [
+  {
+    id: 10,
+    title: 'Total Services · Plataforma empresarial de gestión operativa',
+    description: 'Participo en el desarrollo y mantenimiento full stack de una plataforma privada para gestionar empleados, proyectos, planificación del trabajo y registros de horas.',
+    category: 'Gestión operativa',
+    technologies: ['React', 'TypeScript', 'Python', 'Django REST Framework', 'Auth0', 'BitBucket'],
+    image: '/images/Total-Services.webp',
+    alt: 'Portada del sitio corporativo de Total Services Aruba',
+    liveUrl: 'https://total-services.net/',
+    linkLabel: 'Sitio del cliente',
+    featured: true,
+  },
+  {
+    id: 9,
+    title: 'ESI Honduras',
+    description:
+      'Catálogo de más de 70 equipos de seguridad industrial. Empresas, contratistas y trabajadores en Honduras pueden buscar por riesgo laboral y cotizar cada producto por WhatsApp.',
+    category: 'Seguridad industrial',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'WhatsApp Business'],
+    image: '/images/ESI-Honduras.png',
+    alt: 'Página de inicio del catálogo de equipos de seguridad industrial de ESI Honduras',
+    liveUrl: 'https://www.esihonduras.com/',
+    featured: true,
+  },
   {
     id: 1,
     title: 'AmazingNails/Agendamiento de citas',
@@ -78,7 +103,7 @@ export const featuredProjects: FeaturedProject[] = [
     technologies: ['Next.js', 'TypeScript', 'Tailwindcss', 'React', 'Supabase'],
     image: '/images/CSI-Legal.png',
     alt: 'Sistema de gestión de cumplimiento legal CSI-Legal',
-    liveUrl: 'https://csi-legal-front.vercel.app/login',
+    liveUrl: 'https://csicumplimiento.csihonduras.com/login',
     featured: true,
   },
   {
@@ -162,12 +187,47 @@ const PORTFOLIO_DETAILS: Record<
   {
     portfolioCategory: string;
     industrySlug: string;
+    fullDescription?: string;
+    timeline?: string;
+    teamSize?: string;
     challenge: string;
     solution: string;
     results: string;
     metrics: Array<{ label: string; value: string; icon: string }>;
   }
 > = {
+  10: {
+    portfolioCategory: 'Aplicación Web',
+    industrySlug: 'gestion-operativa',
+    timeline: 'En desarrollo y mantenimiento',
+    teamSize: 'Desarrollo full stack para cliente externo',
+    fullDescription: 'Trabajo en el frontend y la API de una plataforma empresarial privada. Implemento interfaces, reglas de negocio e integraciones de servicios. Por confidencialidad, la imagen y el enlace corresponden al sitio público del cliente. El código, los datos y las interfaces internas son privados.',
+    challenge: 'Conectar la planificación de empleados y proyectos con las horas trabajadas, las tarifas y los reportes operativos, respetando los permisos de cada departamento.',
+    solution: 'Desarrollo interfaces con React y TypeScript y endpoints con Python y Django REST Framework. Implemento validaciones, modelos de datos y migraciones. Integro Auth0 y aplico controles de acceso según el rol y el departamento.',
+    results: 'Optimizo consultas y respuestas mediante procesamiento por lotes, separación de datos básicos y estadísticas, y estrategias de caché. Automatizo notificaciones por correo con destinatarios administrables desde la aplicación. Creo pruebas automatizadas, documento los cambios técnicos y gestiono las versiones con Git.',
+    metrics: [
+      { label: 'Rol', value: 'Full stack', icon: 'CodeBracketIcon' },
+      { label: 'Acceso', value: 'Privado', icon: 'ShieldCheckIcon' },
+      { label: 'Estado', value: 'En curso', icon: 'ClockIcon' },
+    ],
+  },
+  9: {
+    portfolioCategory: 'Desarrollo Web',
+    industrySlug: 'seguridad-industrial',
+    fullDescription:
+      'El sitio reúne un carrusel promocional, categorías de protección, información de la empresa y una página de contacto. El catálogo se adapta a computadoras, tablets y celulares. Cada ficha concentra las imágenes, la marca, las características técnicas y la disponibilidad del equipo, con un enlace para solicitar precio a ventas por WhatsApp Business.',
+    challenge:
+      'Ayudar a los compradores a identificar el equipo adecuado para cada riesgo laboral, generar solicitudes de cotización y dar visibilidad al catálogo en las búsquedas de seguridad industrial en Honduras.',
+    solution:
+      'Construí la interfaz con Next.js 15, React 19 y TypeScript. Los datos locales en TypeScript alimentan las categorías, las marcas y las páginas de producto generadas estáticamente. Usé Tailwind CSS 3 para los estilos adaptables y las animaciones, PostCSS y Autoprefixer para procesar los estilos, Next Image para optimizar imágenes y Lucide React para los iconos.',
+    results:
+      'El catálogo permite filtrar por categoría, marca, riesgo y disponibilidad y pasar de la ficha a una cotización directa. Para facilitar la indexación en Google, configuré metadatos por página, URLs canónicas, robots.txt, un sitemap de páginas e imágenes y Google Search Console. Las fichas incorporan datos estructurados JSON-LD (Product, Offer y BreadcrumbList), junto con Organization y WebSite a nivel del sitio. Open Graph y Twitter Cards definen las vistas previas al compartir enlaces.',
+    metrics: [
+      { label: 'Productos', value: '70+', icon: 'CubeIcon' },
+      { label: 'Filtros', value: '4', icon: 'AdjustmentsHorizontalIcon' },
+      { label: 'Cotizaciones', value: 'WhatsApp', icon: 'ChatBubbleLeftRightIcon' },
+    ],
+  },
   1: {
     portfolioCategory: 'Desarrollo Web',
     industrySlug: 'belleza',
@@ -304,6 +364,7 @@ export interface PortfolioProject {
   teamSize: string;
   liveUrl: string;
   githubUrl?: string;
+  linkLabel?: string;
   featured: boolean;
   fullDescription: string;
   challenge: string;
@@ -313,7 +374,7 @@ export interface PortfolioProject {
   gallery: Array<{ url: string; alt: string }>;
 }
 
-const PORTFOLIO_PROJECT_ORDER = [1, 7, 6, 8, 4, 5, 2, 3];
+const PORTFOLIO_PROJECT_ORDER = [10, 9, 1, 7, 6, 8, 4, 5, 2, 3];
 
 export function buildPortfolioProjects(): PortfolioProject[] {
   return featuredProjects.map((project) => {
@@ -328,11 +389,12 @@ export function buildPortfolioProjects(): PortfolioProject[] {
       image: project.image,
       alt: project.alt,
       technologies: mapProjectTechnologies(project.technologies),
-      timeline: 'Proyecto entregado',
-      teamSize: 'Desarrollo propio / liderazgo técnico',
+      timeline: details.timeline ?? 'Proyecto entregado',
+      teamSize: details.teamSize ?? 'Desarrollo propio / liderazgo técnico',
+      linkLabel: project.linkLabel,
       liveUrl: project.liveUrl,
       featured: project.featured,
-      fullDescription: project.description,
+      fullDescription: details.fullDescription ?? project.description,
       challenge: details.challenge,
       solution: details.solution,
       results: details.results,

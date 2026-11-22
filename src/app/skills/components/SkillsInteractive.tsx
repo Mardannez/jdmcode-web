@@ -2,20 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/AppIcon';
-import SkillCategory from './SkillCategory';
+import SkillCategory, { type Skill } from './SkillCategory';
 import CertificationCard from './CertificationCard';
 import CodeSnippet from './CodeSnippet';
 import GitHubActivity from './GitHubActivity';
 import LearningTimeline, { type TimelineEvent } from './LearningTimeline';
-
-interface Skill {
-  name: string;
-  proficiency: number;
-  yearsOfExperience: number;
-  projects: string[];
-  icon: string;
-  description: string;
-}
 
 interface SkillCategoryData {
   title: string;
@@ -155,6 +146,18 @@ export default function SkillsInteractive() {
       description: 'Control de versiones avanzado, flujos de trabajo colaborativos y automatización CI/CD.'
     }]
 
+  },
+  {
+    title: 'IA aplicada y automatización',
+    categoryIcon: '⚙️',
+    skills: [
+      { name: 'ChatGPT', icon: '📝', description: 'Analizo requisitos, defino el alcance de los proyectos y organizo el trabajo en etapas.' },
+      { name: 'Codex', icon: '💻', description: 'Desarrollo funcionalidades con asistencia de IA y reviso los cambios antes de integrarlos.' },
+      { name: 'n8n', icon: '🔀', description: 'Conecto servicios para automatizar tareas operativas. En Total Services estoy finalizando un flujo de reportes por WhatsApp con Meta y Vertex AI.', projects: ['Total Services'] },
+      { name: 'Rocket IA', icon: '🎨', description: 'Diseño interfaces de usuario y preparo prototipos para explorar pantallas y recorridos antes de implementarlos.' },
+      { name: 'NotebookLM', icon: '📚', description: 'Organizo materiales de estudio y consulto mis fuentes para profundizar en temas técnicos.' },
+      { name: 'Google Gemini', icon: '💬', description: 'Consulto dudas técnicas y comparo alternativas durante el desarrollo.' },
+    ],
   }];
 
 
@@ -391,6 +394,7 @@ export async function POST(request: NextRequest) {
   const filters = [
   { id: 'all', label: 'Todas las Habilidades', icon: 'Squares2X2Icon' },
   { id: 'frontend', label: 'Frontend', icon: 'PaintBrushIcon' },
+  { id: 'ai', label: 'IA y automatización', icon: 'SparklesIcon' },
   { id: 'backend', label: 'Backend', icon: 'ServerIcon' },
   { id: 'tools', label: 'Herramientas', icon: 'WrenchScrewdriverIcon' }];
 
@@ -400,6 +404,7 @@ export async function POST(request: NextRequest) {
     if (activeFilter === 'frontend') return [skillCategories[0]];
     if (activeFilter === 'backend') return [skillCategories[1]];
     if (activeFilter === 'tools') return [skillCategories[2]];
+    if (activeFilter === 'ai') return [skillCategories[3]];
     return skillCategories;
   };
 
